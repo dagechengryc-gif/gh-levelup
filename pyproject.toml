@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gh-levelup"
+version = "0.1.0"
+description = "Audit a GitHub account like a game character sheet: score it, grade it, and print the exact next quests."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "dagechengryc-gif" }]
+keywords = ["github", "profile", "audit", "cli", "career"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Environment :: Console",
+  "Operating System :: OS Independent",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+gh-levelup = "levelup.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/dagechengryc-gif/gh-levelup"
+Changelog = "https://github.com/dagechengryc-gif/gh-levelup/blob/main/CHANGELOG.md"
+
+[tool.setuptools]
+packages = ["levelup"]
