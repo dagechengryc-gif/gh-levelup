@@ -1,0 +1,31 @@
+name: 功能建议
+description: 提议一个新指标、新子命令或新输出格式
+labels: [enhancement]
+body:
+  - type: textarea
+    id: pain
+    attributes:
+      label: 现在哪里别扭
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: 你希望它怎么工作
+      placeholder: |
+        gh-levelup diff old.json new.json
+        输出：分数变化 + 新增徽章 + star 增量
+    validations:
+      required: true
+  - type: dropdown
+    id: scope
+    attributes:
+      label: 属于哪一块
+      options:
+        - 评分模型
+        - 抓取后端
+        - 输出渲染
+        - 文档
+        - 其它
+    validations:
+      required: true

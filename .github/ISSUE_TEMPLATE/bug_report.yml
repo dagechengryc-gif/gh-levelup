@@ -1,0 +1,43 @@
+name: Bug 报告
+description: 报一个可复现的错误
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: 请先搜一下已有 issue，避免重复。
+  - type: textarea
+    id: what
+    attributes:
+      label: 现象
+      description: 你期望什么，实际发生了什么
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. gh-levelup audit -u someone
+        2. ...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: gh-levelup 版本
+      placeholder: 0.1.0
+    validations:
+      required: true
+  - type: input
+    id: python
+    attributes:
+      label: Python / 系统
+      placeholder: 3.12.4 / macOS 15
+    validations:
+      required: true
+  - type: textarea
+    id: snapshot
+    attributes:
+      label: 快照（可选）
+      description: 输出 `gh-levelup audit -u <账号> --save-json snap.json` 后附上，删掉敏感字段
+      render: json
