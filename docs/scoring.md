@@ -75,3 +75,22 @@ GitHub 没有徽章 API，`levelup.api.parse_achievements()` 解析 profile 页�
 | 680 | L5 铂金 Platinum |
 | 820 | L6 钻石 Diamond |
 | 900 | L7 王者 Legend |
+
+## FAQ
+
+**Q：为什么我的 star/follower 是 0，但我觉得自己很活跃？**
+A：本模型只统计**公开**信息。私有仓库的 commit 只有在账号开启
+"Contributions: private contributions" 后才会进入 contributions 计数，
+仓库本身（数量、star）永远不进。
+
+**Q：徽章抓不到怎么办？**
+A：GitHub 没有徽章 API，只能解析 profile 页。页面结构变更时会静默返回空列表，
+其它五个维度不受影响。用 `--no-achievements` 可以跳过这次请求。
+
+**Q：1000 分是不是很难拿满？**
+A：满格需要 800+ 次年贡献、64 个已合并 PR、150+ star。它是个坐标，不是目标；
+先看 `gh-levelup next` 的前三条，那才是能立刻动手的部分。
+
+**Q：能给别人刷分吗？**
+A：不能。合并 PR、star、review 都发生在别人的仓库和别人的判断里，
+本工具只读不改，也不提供任何写入 GitHub 的接口。
